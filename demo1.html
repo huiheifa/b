@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+	        body{
+	            width:40em;
+	            margin:0 auto;
+	        }
+	        article{
+	            float:left;
+	        }
+	        aside{
+	            float:right;
+	        }
+	        p{
+	            line-height:3em;
+	        }
+	    </style>
+
+	</head>
+	<body>
+		<article>
+			<p>这是一个段落</p>    
+			<p>这是一个段落</p>    
+			<p>这是一个段落</p>    
+			<p>这是一个段落</p>    
+			<p>这是一个段落</p>    
+			<p>这是一个段落</p>    
+			<p>这是一个段落</p>    
+			<p>这是一个段落</p>    
+			<p>这是一个段落</p>    
+			<p>这是一个段落</p>    
+			<p>这是一个段落</p>    
+			<p>这是一个段落</p>    
+			<p>这是一个段落</p>    
+			<p>这是一个段落</p>    
+			<p>这是一个段落</p>    
+			<p>这是一个段落</p>    
+			<p>这是一个段落</p>    
+			<p>这是一个段落</p>    
+			<p>这是一个段落</p>    
+		</article>
+		<aside>
+		    <p>这里会滚动</p>
+		    <p>这里会滚动</p>
+		    <p>这里会滚动</p>
+		    <div id="box"><p>这个段落到达一定高度会固定</p></div>
+		</aside>
+
+	</body>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		let box_top = $('#box').offset().top
+		
+		$(window).scroll(()=>{
+			
+			let winTop = $(this).scrollTop();
+			if(winTop>=box_top){
+				$('#box').css({'position':'fixed','top':'0','right':'0'})
+			}else{
+				$('#box').css('position','static')
+			}
+		})
+		
+	</script>
+</html>
